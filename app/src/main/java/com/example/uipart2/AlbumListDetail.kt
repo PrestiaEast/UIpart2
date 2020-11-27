@@ -58,9 +58,9 @@ class AlbumListDetail : AppCompatActivity() {
                 val position = intent.extras!!.getInt("position")
                 val info = item.menuInfo as AdapterView.AdapterContextMenuInfo
                 val dialogBuilder = AlertDialog.Builder(this)
-                dialogBuilder.setMessage("Remove song from album?")
+                dialogBuilder.setMessage("Remove this song from album?")
                     .setCancelable(false)
-                    .setPositiveButton("OK", DialogInterface.OnClickListener{ dialog, which ->
+                    .setPositiveButton("Remove", DialogInterface.OnClickListener{ dialog, which ->
                         if(position == 0){
                             selectedSong.removeAt(info.position)
                         }

@@ -88,7 +88,7 @@ class QueuedSongs : AppCompatActivity() {
                 selectedSong.removeAt(info.position)
                 adapter?.notifyDataSetChanged()
                 startActivity(Intent(this, QueuedSongs::class.java))
-                val toast = Toast.makeText(this, "Song removed from the list", Toast.LENGTH_SHORT)
+                val toast = Toast.makeText(this, "Successfully Removed Song from List", Toast.LENGTH_SHORT)
                 toast.show()
             }
         }

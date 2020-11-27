@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Added to Queues", Toast.LENGTH_SHORT).show()
                 val info = item.menuInfo as AdapterView.AdapterContextMenuInfo
                 selectedSong.add(productsArray[info.position])
-                val snackbar = Snackbar.make(mainLayout, "View Listed Songs?", Snackbar.LENGTH_LONG)
-                snackbar.setAction("Go", View.OnClickListener {
+                val snackbar = Snackbar.make(mainLayout, "Go to Queues?", Snackbar.LENGTH_LONG)
+                snackbar.setAction("Yes", View.OnClickListener {
                     startActivity(Intent(applicationContext, QueuedSongs::class.java))
                 })
                 snackbar.show()
