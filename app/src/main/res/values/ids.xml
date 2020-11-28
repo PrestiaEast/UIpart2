@@ -5,4 +5,5 @@
     <item name="go_to_songs" type="id" />
     <item name="go_to_albums" type="id" />
     <item name="song_delete" type="id" />
+    <item name="display_added_songs" type="id" />
 </resources>

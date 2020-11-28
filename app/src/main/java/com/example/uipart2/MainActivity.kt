@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.uipart2.models.Song
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,6 +30,7 @@ val productsArray = arrayOf(
         "Lay Me Down"
 )
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -85,6 +87,14 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.go_to_albums -> {
                 startActivity(Intent(this, albumActivity::class.java))
+                true
+            }
+            R.id.add_song -> {
+                startActivity(Intent(this, AddNewSong::class.java))
+                true
+            }
+            R.id.display_added_songs -> {
+                startActivity(Intent(this, DisplayAddedSongs::class.java))
                 true
             }
             else -> {

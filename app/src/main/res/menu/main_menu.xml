@@ -11,4 +11,10 @@
     <item
         android:id="@+id/go_to_albums"
         android:title="Albums" />
+    <item
+        android:id="@+id/add_song"
+        android:title="Add Song"/>
+    <item
+        android:id="@+id/display_added_songs"
+        android:title="Display Added Songs"/>
 </menu>
