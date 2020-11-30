@@ -7,11 +7,12 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.uipart2.models.Song
+import com.example.uipart2.models.SongsInAlbum
 
 class SongsHandler (var context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION){
     companion object{
-        private val DATABASE_VERSION = 1
-        private val DATABASE_NAME = "songs_database"
+        internal val DATABASE_VERSION = 1
+        internal val DATABASE_NAME = "songs_database"
         private val TABLE_NAME = "songs"
         private val COL_ID = "id"
         private val COL_TITLE = "title"
@@ -33,7 +34,7 @@ class SongsHandler (var context: Context): SQLiteOpenHelper(context, DATABASE_NA
         onCreate(db)
     }
 
-    fun create(song: Song): Boolean{
+    fun create(song: SongsInAlbum): Boolean{
         //get the database (readableDatabase)
         val database = this.writableDatabase
         // set ContentValues

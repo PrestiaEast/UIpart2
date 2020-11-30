@@ -8,9 +8,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.GridView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.uipart2.models.Album
 import android.widget.Adapter as Adpter1
 
 class albumActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_album)

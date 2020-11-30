@@ -97,6 +97,14 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, DisplayAddedSongs::class.java))
                 true
             }
+            R.id.add_album -> {
+                startActivity(Intent(this, AddNewAlbum::class.java))
+                true
+            }
+            R.id.display_added_album -> {
+                startActivity(Intent(this, DisplayAddedAlbum::class.java))
+                true
+            }
             else -> {
                 super.onOptionsItemSelected(item)
             }

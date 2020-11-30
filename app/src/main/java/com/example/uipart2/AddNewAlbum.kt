@@ -9,34 +9,31 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.uipart2.models.Song
+import com.example.uipart2.models.Album
 
-class AddNewSong : AppCompatActivity() {
-    lateinit var addSongButton: Button
-    lateinit var songTitle: EditText
-    lateinit var songArtist: EditText
-    lateinit var songAlbum: EditText
+class AddNewAlbum : AppCompatActivity() {
+    lateinit var addSubmitButton: Button
+    lateinit var albumTitle: EditText
+    lateinit var albumReleaseDate: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_new_song)
+        setContentView(R.layout.activity_add_new_album)
 
-        val databaseHandler = SongsHandler(this)
-        songTitle = findViewById(R.id.song_title)
-        songArtist = findViewById(R.id.song_artist)
-        songAlbum = findViewById(R.id.song_album)
+        val databaseHandler = AlbumsHandler(this)
+        albumTitle = findViewById(R.id.add_album_title)
+        albumReleaseDate = findViewById(R.id.release_date)
 
-        addSongButton = findViewById(R.id.addSong)
-        addSongButton.setOnClickListener {
-            //gets user input
-            val title = songTitle.text.toString()
-            val artist = songArtist.text.toString()
-            val album = songAlbum.text.toString()
-            //assign to model
-            val song = Song(title = title,artist = artist,album= album)
-            //save to database
-            if(databaseHandler.create(song)) {
-                Toast.makeText(applicationContext, "Song Added.", Toast.LENGTH_LONG).show()
+        addSubmitButton = findViewById(R.id.Submit)
+        addSubmitButton.setOnClickListener {
+            val title = albumTitle.text.toString()
+            val releaseDate = albumReleaseDate.text.toString().toDouble()
+
+            val album = Album(title = title, releaseDate = releaseDate)
+
+            databaseHandler.create(album)
+            if(databaseHandler.create(album)){
+                Toast.makeText(applicationContext, "Album Added.", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(applicationContext, "Something Went Wrong.", Toast.LENGTH_LONG).show()
             }
@@ -45,9 +42,8 @@ class AddNewSong : AppCompatActivity() {
     }
 
     fun clearfields(){
-        songTitle.text.clear()
-        songArtist.text.clear()
-        songAlbum.text.clear()
+        albumTitle.text.clear()
+        albumReleaseDate.text.clear()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -74,10 +70,6 @@ class AddNewSong : AppCompatActivity() {
             }
             R.id.display_added_songs -> {
                 startActivity(Intent(this, DisplayAddedSongs::class.java))
-                true
-            }
-            R.id.add_album -> {
-                startActivity(Intent(this, AddNewAlbum::class.java))
                 true
             }
             R.id.display_added_album -> {

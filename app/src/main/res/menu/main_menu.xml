@@ -17,4 +17,10 @@
     <item
         android:id="@+id/display_added_songs"
         android:title="Display Added Songs"/>
+    <item
+        android:id="@+id/add_album"
+        android:title="Add Album"/>
+    <item
+        android:id="@+id/display_added_album"
+        android:title="Display Added Album"/>
 </menu>

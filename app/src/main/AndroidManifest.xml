@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UIpart2">
-        <activity android:name=".EditSongActivity"></activity>
+        <activity android:name=".AddSongToAlbum"></activity>
+        <activity android:name=".DisplaySongsForNewAlbum" />
+        <activity android:name=".EditAlbumActivity" />
+        <activity android:name=".DisplayAddedAlbum" />
+        <activity android:name=".AddNewAlbum" />
+        <activity android:name=".EditSongActivity" />
         <activity android:name=".DisplayAddedSongs" />
         <activity android:name=".AddNewSong" />
         <activity android:name=".AlbumListDetail" />
